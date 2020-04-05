@@ -1,0 +1,26 @@
+--设置用户和邮箱
+
+	git config --global user.name "limy"
+
+	git config --global user.email“865643531@qq.com"
+
+--生成新密钥
+
+	ssh-keygen -t rsa -b 4096 -C "865643531@qq.com"
+
+--打开ssh agent
+
+	eval $(ssh-agent -s) 
+
+--将SSH私钥添加到ssh-agent
+
+	ssh-add ~/.ssh/id_rsa
+
+--验证是否已生成私钥并将其加载到SSH中
+
+	ssh-add -l
+
+	--如果您使用的是OpenSSH 6.8或更高版本
+
+		ssh-add -l -E md5
+
